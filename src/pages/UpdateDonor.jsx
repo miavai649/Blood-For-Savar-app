@@ -20,7 +20,7 @@ function UpdateDonor() {
     const [donor, setDonor] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/donor/${id}`)
+        fetch(`https://donor-list-server.vercel.app/donor/${id}`)
         .then(res => res.json())
         .then(data => {
             console.log(data[0]);
@@ -38,7 +38,7 @@ function UpdateDonor() {
             phoneNum: form.phoneNum.value,
             bloodGrp: form.bloodGrp.value
         }
-        fetch(`http://localhost:5000/update/${id}`, {
+        fetch(`https://donor-list-server.vercel.app/update/${id}`, {
             method: 'PATCH',
             headers: {
                 "content-type": "application/json"

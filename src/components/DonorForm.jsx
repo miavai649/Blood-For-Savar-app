@@ -38,7 +38,7 @@ function DonorForm() {
         }
         console.log(donorData);
 
-        fetch('http://localhost:5000/donor', {
+        fetch('https://donor-list-server.vercel.app/donor', {
             method: 'POST',
             headers: {
                 "content-type": "application/json",
@@ -59,7 +59,7 @@ function DonorForm() {
     
 
   useEffect(() => {
-    fetch("http://localhost:5000/allDonor")
+    fetch("https://donor-list-server.vercel.app/allDonor")
       .then((res) => res.json())
         .then((data) => {
             setDonors(data)
@@ -74,7 +74,7 @@ function DonorForm() {
     const handleDelete = (id) => {
         const proceed = window.confirm('Donor will be delete')
         if (proceed) {
-            fetch(`http://localhost:5000/deleteDonor/${id}`, {
+            fetch(`https://donor-list-server.vercel.app/deleteDonor/${id}`, {
                 method: 'DELETE'
             })
             .then(res => res.json())
