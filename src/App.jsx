@@ -1,8 +1,7 @@
-import {
-  Heading
-} from "@chakra-ui/react";
+import { Toaster } from "react-hot-toast";
+import { RouterProvider } from "react-router-dom";
 import "./App.css";
-import DonorForm from "./components/DonorForm";
+import { Router } from "./routes/Router";
 
 function App() {
 
@@ -10,12 +9,9 @@ function App() {
 
   return (
     <div className="App">
-      <Heading textAlign={"center"} mt="90px" as={"h1"} size="2xl">
-        🩸Blood Donor List
-      </Heading>
-
-      {/* form */}
-      <DonorForm></DonorForm>
+      <RouterProvider router={Router}></RouterProvider>
+      <Toaster/>
+      
     </div>
   );
 }
